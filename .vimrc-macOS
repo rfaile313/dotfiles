@@ -1,6 +1,5 @@
-"~~~~~VIMRC~~~~~
-"Rudy - @rfaile313
-"-----------------
+"Rudy @rfaile313 Base .vimrc
+""""""""""""""""""""""""""""
 "Colors in iTerm2
 :set termguicolors
 :set number
