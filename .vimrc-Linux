@@ -1,0 +1,57 @@
+"Rudy @rfaile313 .vimrc
+""""""""""""""""""""""""""""
+set number
+set termguicolors
+set showcmd
+set wildmenu
+set bs=2
+set encoding=utf-8
+set modelines=0
+
+set wrap
+set textwidth=100 "stops at col 100
+set formatoptions=tcqrn1
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set showbreak=+++
+set scrolloff=3
+set backspace=indent,eol,start
+set history=500
+set ignorecase
+set smartcase
+set hlsearch
+set showmatch
+set mat=2
+
+" Don't autocomment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+let g:sonokai_style= 'andromeda'
+colorscheme sonokai
+
+" C code completion citing clang
+let g:completor_clang_binary= '/usr/bin/clang'
+
+" tab autocomplete -> pretty leet 
+function! Tab_Or_Complete() abort
+  " If completor is already open the `tab` cycles through suggested completions.
+  if pumvisible()
+    return "\<C-N>"
+  " If completor is not open and we are in the middle of typing a word then
+  " `tab` opens completor menu.
+  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^[[:keyword:][:ident:]]'
+    return "\<C-R>=completor#do('complete')\<CR>"
+  else
+    " If we aren't typing a word and we press `tab` simply do the normal `tab`
+    " action.
+    return "\<Tab>"
+  endif
+endfunction
+
+" Use tab to trigger auto completion.  Default suggests completions as you type.
+"let g:completor_auto_trigger = 0
+inoremap <expr> <Tab> Tab_Or_Complete()
+
+
+
