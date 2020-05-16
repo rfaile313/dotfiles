@@ -1,11 +1,8 @@
-"Rudy @rfaile313 Base .vimrc
-""""""""""""""""""""""""""""
 "Colors in iTerm2
 :set termguicolors
 :set number
-:colorscheme sublimemonokai
-"NERDTree
 :syntax on
+:colorscheme sonokai 
 "visual menu complete
 :set wildmenu
 "backspace / scrolling
@@ -21,7 +18,7 @@
 :set tabstop=4
 :set shiftwidth=4
 :set softtabstop=4
-:set showbreak=+++
+:set showbreak=++
 "line history
 :set history=500
 "ignore case when searching
@@ -30,11 +27,15 @@
 :set smartcase
 "highlight search results
 :set hlsearch
-"matching bracket pairs
-:set showmatch
-
+" matching bracket pairs
+" :set showmatch
 :set encoding=utf-8
 :set showcmd
+" remap q to Q (macro) 
+nnoremap Q q
+nnoremap q <Nop>
+" Don't autocomment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -50,6 +51,5 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"Replaced statusbar config in favor of vim-airline
-"https://github.com/vim-airline/vim-airline
+" C Code Completion
+let g:completor_clang_binary = '/usr/bin/clang'
