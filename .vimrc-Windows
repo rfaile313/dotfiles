@@ -6,8 +6,6 @@
 :set showcmd
 "visual menu complete
 :set wildmenu
-"backspace
-:set bs=2
 "blink cursor instead of beep
 :set visualbell
 "encoding
@@ -24,8 +22,10 @@
 :set showbreak=++ "show which lines poured over
 "cursor
 :set scrolloff=3
+"backspace
+:set bs=2
 :set backspace=indent,eol,start
-"cursor block
+"cursor block visual (stays terminal bar on insert mode) 
 let &t_SI.="\e[5 q"
 let &t_SR.="\e[4 q"
 let &t_EI.="\e[1 q"
@@ -39,11 +39,15 @@ let &t_EI.="\e[1 q"
 :set hlsearch
 "matching bracket pairs
 :set showmatch
-:set mat=2 "blink
-"uncomment for column highlight @ line 80
-"highlight ColorColumn ctermbg=gray
-"set colorcolumn=80
-
+:set mat=2 
+"remap q to Q (macro)
+nnoremap Q q
+nnoremap q <Nop>
+"Switch window left/right with ctrl left/right
+nmap <silent> <C-Right> :wincmd l<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+"dont autocomment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
