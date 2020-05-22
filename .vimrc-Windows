@@ -20,6 +20,8 @@
 :set shiftwidth=4
 :set softtabstop=4
 :set showbreak=++ "show which lines poured over
+"indent
+:set autoindent
 "cursor
 :set scrolloff=3
 "backspace
@@ -37,6 +39,8 @@ let &t_EI.="\e[1 q"
 :set smartcase
 "highlight search results
 :set hlsearch
+"turn off search highlighting with comma space
+nnoremap <silent> ,<space> :nohlsearch<CR>
 "matching bracket pairs
 :set showmatch
 :set mat=2 
