@@ -23,13 +23,18 @@ set smartcase
 set hlsearch
 set showmatch
 set mat=2
-
+" Cursor block
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[4 q"
+let &t_EI.="\e[1 q"
 " Don't autocomment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
+" Remap q to Q (macro)
+nnoremap Q q
+nnoremap q <Nop>
+" color
 let g:sonokai_style= 'andromeda'
 colorscheme sonokai
-
 " C code completion citing clang
 let g:completor_clang_binary= '/usr/bin/clang'
 
@@ -52,6 +57,3 @@ endfunction
 " Use tab to trigger auto completion.  Default suggests completions as you type.
 "let g:completor_auto_trigger = 0
 inoremap <expr> <Tab> Tab_Or_Complete()
-
-
-
