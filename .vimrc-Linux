@@ -1,6 +1,7 @@
 "Rudy @rfaile313 .vimrc
 """"""""""""""""""""""""""""
 set number
+syntax on
 set showcmd
 set wildmenu
 set bs=2
