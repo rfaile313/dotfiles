@@ -1,12 +1,12 @@
 # Basic, non-private bash aliases
 alias bashrc='vim ~/.bashrc'
 alias editalias='vim ~/.bash_aliases'
-alias sshd='vim /etc/ssh/sshd_config'
+alias sshd='sudo vim /etc/ssh/sshd_config'
 alias restartssh='sudo systemctl restart ssh.service'
 alias openports='sudo lsof -i -P -n | grep LISTEN'
 alias activesshsessions="ss -n -o state established '( dport = :22 or sport = :22 )'"
 alias whatismyip='curl ipv4.icanhazip.com'
-alias interfaces='vim /etc/network/interfaces'
+alias interfaces='sudo vim /etc/network/interfaces'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
