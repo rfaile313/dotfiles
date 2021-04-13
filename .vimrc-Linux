@@ -1,31 +1,35 @@
-"Rudy @rfaile313 .vimrc
-""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""
+" Rudy Faile @rfaile313 .vimrc "
+""""""""""""""""""""""""""""""""
 set number
-syntax on
 set showcmd
 set wildmenu
 set bs=2
 set encoding=utf-8
 set modelines=0
-" Move between windows with ctrl <-- -->
+" move between windows with ctrl <-- -->
 nmap <silent> <C-Right> :wincmd l<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
 set wrap
-set paste "uncomment or set manually for no line wrap
-set textwidth=100 "stops at col 100
+set paste " uncomment or set manually for no line wrap
+set textwidth=100 " stops at col 100
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set showbreak=++
 set scrolloff=3
+" smarter backspace
 set backspace=indent,eol,start
 set history=500
 set ignorecase
 set smartcase
-set hlsearch
-set showmatch
+set hlsearch " highlight searches
+" show next matched text center of screen
+nnoremap n nzz
+nnoremap N Nzz
+set showmatch " brackets/cursors
 set mat=2
 " Cursor block
 let &t_SI.="\e[5 q"
@@ -41,7 +45,7 @@ colorscheme elflord
 " C code completion citing clang
 let g:completor_clang_binary= '/usr/bin/clang'
 
-" tab autocomplete -> pretty leet 
+" tab autocomplete -> pretty leet
 function! Tab_Or_Complete() abort
   " If completor is already open the `tab` cycles through suggested completions.
   if pumvisible()
