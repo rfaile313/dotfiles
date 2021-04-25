@@ -1,45 +1,51 @@
-"Colors in iTerm2
-:set termguicolors
-:set number
-:syntax on
-:colorscheme sonokai 
-"visual menu complete
-:set wildmenu
-"backspace / scrolling
-:set bs=2
-:set scrolloff=3
-:set backspace=indent,eol,start
-"security
-:set modelines=0
-"whitespace
-:set wrap
-:set textwidth=100 "stops at col 100
-:set formatoptions=tcqrn1
-:set tabstop=4
-:set shiftwidth=4
-:set softtabstop=4
-:set showbreak=++
-"line history
-:set history=500
-"ignore case when searching
-:set ignorecase
-"smart case when searching
-:set smartcase
-"highlight search results
-:set hlsearch
-" matching bracket pairs
-" :set showmatch
-:set encoding=utf-8
-:set showcmd
-" remap q to Q (macro) 
+" @rfaile313 .vimrc MacOS
+" Colors in iTerm2
+set termguicolors
+set number
+syntax on
+" External Theme
+colorscheme sonokai
+" Command Autocomplete
+set wildmenu
+" Annoying beep off
+set visualbell
+" Backspace / scrolling
+set bs=2
+set scrolloff=3
+set backspace=indent,eol,start
+" Security
+set modelines=0
+" Whitespace
+set wrap
+set textwidth=100 "stops at col 100
+set formatoptions=tcqrn1
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set showbreak=++
+" Line history
+set history=500
+" Ignore case when searching
+set ignorecase
+" Smart case when searching
+set smartcase
+" Highlight search results
+set hlsearch
+" Matching bracket pairs
+set showmatch
+set encoding=utf-8
+set showcmd
+" Remap q to Q (macro)
 nnoremap Q q
 nnoremap q <Nop>
 " Don't autocomment
-:set paste
+set paste
+" Set Autointent
+set autoindent
 " Move between windows with ctrl <-- -->
 nmap <silent> <C-Right> :wincmd l<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
-" remove highlighting after search with comma-space
+" Remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -58,4 +64,4 @@ inoremap <s-tab> <c-n>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " C Code Completion
 let g:completor_clang_binary = '/usr/bin/clang'
-"Notes - ctrl-w then v splits windows vertically
+" Notes - ctrl-w then v splits windows vertically
