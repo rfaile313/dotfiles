@@ -12,4 +12,4 @@ maybe other non dot configs:
 
 ### Howto:
 
-curl raw data, pipe into file - gg.
+curl raw data, pipe into file | e.g. `curl https://raw.githubusercontent.com/rfaile313/dotfiles/master/.vimrc-gnu-linux > .vimrc`
