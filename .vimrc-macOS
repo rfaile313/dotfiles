@@ -1,52 +1,36 @@
-" @rfaile313 .vimrc MacOS
-" Colors in iTerm2
-set termguicolors
+" @rfaile313 GNU/Linux base .vimrc
+" Don't autocomment - add this first, then save
+" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" Regular stuff from here
 set number
 syntax on
-" External Theme
-colorscheme sonokai
-" Command Autocomplete
+set termguicolors
+set showcmd
 set wildmenu
-" Annoying beep off
-set visualbell
-" Backspace / scrolling
 set bs=2
-set scrolloff=3
-set backspace=indent,eol,start
-" Security
+set encoding=utf-8
 set modelines=0
-" Whitespace
 set wrap
 set textwidth=100 "stops at col 100
 set formatoptions=tcqrn1
-set tabstop=4
 set shiftwidth=4
+set tabstop=4
 set softtabstop=4
 set showbreak=++
-" Line history
+set scrolloff=3
+set backspace=indent,eol,start
 set history=500
-" Ignore case when searching
 set ignorecase
-" Smart case when searching
 set smartcase
-" Highlight search results
 set hlsearch
-" Matching bracket pairs
 set showmatch
-set encoding=utf-8
-set showcmd
+set mat=2
+
 " Remap q to Q (macro)
 nnoremap Q q
 nnoremap q <Nop>
-" Don't autocomment
-set paste
-" Set Autointent
-set autoindent
-" Move between windows with ctrl <-- -->
-nmap <silent> <C-Right> :wincmd l<CR>
-nmap <silent> <C-Left> :wincmd h<CR>
-" Remove highlighting after search with comma-space
-nnoremap <silent> ,<space> :nohlsearch<CR>
+" color
+colorscheme sonokai
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -62,6 +46,10 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" C Code Completion
+" Move between windows with ctrl <-- -->
+nmap <silent> <C-Right> :wincmd l<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+" remove highlighting after search with comma-space
+nnoremap <silent> ,<space> :nohlsearch<CR>
+" C code completion
 let g:completor_clang_binary = '/usr/bin/clang'
-" Notes - ctrl-w then v splits windows vertically
