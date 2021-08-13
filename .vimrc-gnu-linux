@@ -41,6 +41,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 nnoremap Q q
 nnoremap q <Nop>
 " color
+syntax on
 colorscheme elflord
 " C code completion citing clang
 let g:completor_clang_binary= '/usr/bin/clang'
