@@ -1,6 +1,6 @@
 " @rfaile313 GNU/Linux base .vimrc
 " Don't autocomment - add this first, then save
-" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Regular stuff from here
 set number
 syntax on
@@ -25,16 +25,16 @@ set smartcase
 set hlsearch
 set showmatch
 set mat=2
-
 " Remap q to Q (macro)
 nnoremap Q q
 nnoremap q <Nop>
 " color
 colorscheme sonokai
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
+
+"set paste
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"NOTE(Rudy): DOES NOT WORK WITH :set paste
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -52,4 +52,4 @@ nmap <silent> <C-Left> :wincmd h<CR>
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
 " C code completion
-let g:completor_clang_binary = '/usr/bin/clang'
+"let g:completor_clang_binary = '/usr/bin/clang'
