@@ -67,4 +67,4 @@ endfunction
 inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"using airline for status bar https://github.com/vim-airline/vim-airline
+" using airline for status bar https://github.com/vim-airline/vim-airline
