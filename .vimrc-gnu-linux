@@ -13,9 +13,6 @@ nmap <silent> <C-Left> :wincmd h<CR>
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
 set wrap
-" uncomment or set manually for no line wrap
-" paste also breaks tab complete
-" set paste
 set textwidth=100 " stops at col 100
 set shiftwidth=4
 set tabstop=4
@@ -33,10 +30,6 @@ nnoremap n nzz
 nnoremap N Nzz
 set showmatch " brackets/cursors
 set mat=2
-" Cursor block
-let &t_SI.="\e[5 q"
-let &t_SR.="\e[4 q"
-let &t_EI.="\e[1 q"
 " Don't autocomment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Remap q to Q (macro)
@@ -44,26 +37,23 @@ nnoremap Q q
 nnoremap q <Nop>
 " color
 syntax on
-colorscheme elflord
-" C code completion citing clang
-let g:completor_clang_binary= '/usr/bin/clang'
+colorscheme peachpuff
 
-" tab autocomplete -> pretty leet
-function! Tab_Or_Complete() abort
-  " If completor is already open the `tab` cycles through suggested completions.
-  if pumvisible()
-    return "\<C-N>"
-  " If completor is not open and we are in the middle of typing a word then
-  " `tab` opens completor menu.
-  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^[[:keyword:][:ident:]]'
-    return "\<C-R>=completor#do('complete')\<CR>"
-  else
-    " If we aren't typing a word and we press `tab` simply do the normal `tab`
-    " action.
-    return "\<Tab>"
-  endif
+" uncomment or set manually for no line wrap
+" paste also breaks tab complete
+" set paste
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent if we're at the beginning of a line. Else, do completion.
+"NOTE(Rudy): DOES NOT WORK WITH :set paste
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
 endfunction
-
-" Use tab to trigger auto completion.  Default suggests completions as you type.
-"let g:completor_auto_trigger = 0
-inoremap <expr> <Tab> Tab_Or_Complete()
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
