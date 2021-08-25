@@ -13,7 +13,9 @@ nmap <silent> <C-Left> :wincmd h<CR>
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
 set wrap
-set paste " uncomment or set manually for no line wrap
+" uncomment or set manually for no line wrap
+" paste also breaks tab complete
+" set paste
 set textwidth=100 " stops at col 100
 set shiftwidth=4
 set tabstop=4
