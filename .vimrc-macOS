@@ -1,4 +1,4 @@
-" @rfaile313 GNU/Linux base .vimrc
+" @rfaile313 MacOS .vimrc
 " Don't autocomment - add this first, then save
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Regular stuff from here
@@ -12,11 +12,12 @@ set encoding=utf-8
 set modelines=0
 set wrap
 set textwidth=100 "stops at col 100
+" Lets try no showbreak for a while
+" set showbreak=++
 set formatoptions=tcqrn1
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set showbreak=++
 set scrolloff=3
 set backspace=indent,eol,start
 set history=500
@@ -31,10 +32,12 @@ nnoremap q <Nop>
 " color
 colorscheme sonokai
 
-"set paste
+" set paste messes with autocompletion, disable for now
+" set paste
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent if we're at the beginning of a line. Else, do completion.
-"NOTE(Rudy): DOES NOT WORK WITH :set paste
+"NOTE(Rudy): DOES NOT WORK WITH :set paste 
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -51,5 +54,3 @@ nmap <silent> <C-Right> :wincmd l<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
-" C code completion
-"let g:completor_clang_binary = '/usr/bin/clang'
