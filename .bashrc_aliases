@@ -9,6 +9,6 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 alias hosts='sudo vim /etc/hosts'
-alias rl='exec bash'
+alias rl="exec $SHELL"
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
