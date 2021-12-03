@@ -1,14 +1,29 @@
 # Basic, non-private bash aliases
+
+# Easy edit shortcuts 
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
+alias editalias='vim ~/.bash_aliases'
+alias interfaces='sudo vim /etc/network/interfaces'
+alias hosts='sudo vim /etc/hosts'
+
+# Show ports / connections / ip
 alias openports='sudo lsof -i -P -n | grep LISTEN'
 alias activesshsessions="ss -n -o state established '( dport = :22 or sport = :22 )'"
 alias whatismyip='curl ifconfig.me'
-alias interfaces='sudo vim /etc/network/interfaces'
+
+# Colorful greps n' stuff
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-alias hosts='sudo vim /etc/hosts'
-alias rl="exec $SHELL"
+alias ls='ls --color=auto'
+
+# Make parent / show work 
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
+
+# Reload active shell session
+alias rl="exec $SHELL"
+
+# Lazy Updates
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
