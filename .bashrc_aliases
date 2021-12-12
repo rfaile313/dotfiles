@@ -1,6 +1,7 @@
 # Basic, non-private bash aliases
 
 # Easy edit shortcuts 
+alias home="cd ~"
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
 alias editalias='vim ~/.bash_aliases'
@@ -29,3 +30,17 @@ alias rl="exec $SHELL"
 
 # Lazy Updates
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+
+# Git shortcuts
+alias commitlog='git log --pretty=oneline --decorate'
+alias ga='git add .'
+alias gc='git commit'
+alias stash='git stash'
+alias gp='git push'
+alias gpr="git push --set-upstream origin $(git branch --show-current)"
+# force local to sync with remote
+alias syncwithmaster="git fetch origin && git reset --hard origin/$(git branch --show-current) && git clean -f -d"
+
+# Tools
+alias loadtime="time zsh -i -c echo"
+alias whatismyip="echo 'curl ipv4.icanhazip.com' && curl ipv4.icanhazip.com"
