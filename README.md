@@ -1,10 +1,11 @@
-# dotfiles
+# Dotfiles and other useful Linux stuff
 
 Non-private basic dotfile configs: 
 
 - .bashrc
 - .bashrc_aliases
 - .vimrc
+- Useful commands and cheat sheets
 
 ### Howto:
 
