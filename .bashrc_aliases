@@ -17,10 +17,12 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+alias dir='dir --color=auto'
 
 # Make parent / show work 
 alias mkdir='mkdir -vp'
 alias mv='mv -iv'
+alias cp='cp -v'
 
 # Reload active shell session
 alias rl="exec $SHELL"
