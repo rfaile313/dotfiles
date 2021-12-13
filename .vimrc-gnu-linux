@@ -38,7 +38,7 @@ nnoremap Q q
 nnoremap q <Nop>
 " color
 syntax on
-colorscheme desert
+colorscheme sonokai
 
 " uncomment or set manually for no line wrap
 " paste also breaks tab complete
