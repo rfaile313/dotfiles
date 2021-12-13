@@ -5,7 +5,11 @@ Non-private basic dotfile configs:
 - .bashrc
 - .bashrc_aliases
 - .vimrc
-- Useful commands and cheat sheets
+
+Other:
+- Useful commands
+- `term_colors.py` - for checking color/schemes
+- `vimprefs` - for setting latest `.vimrc` and including `sonokai.vim` as a color scheme
 
 ### Howto:
 
