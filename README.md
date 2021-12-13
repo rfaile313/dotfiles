@@ -9,10 +9,10 @@ Non-private basic dotfile configs:
 
 ### Howto:
 
-curl raw data, pipe into file | e.g. `curl rawurl > .vimrc`
+Just vim?
 
-Maybe like a quick setup on a linux box would look something like:
+run `vimprefs` or curl files directly as needed.
 
 ```
-curl https://raw.githubusercontent.com/rfaile313/dotfiles/master/.bashrc_aliases > ~/.bashrc_aliases && curl https://raw.githubusercontent.com/rfaile313/dotfiles/master/.bashrc  > ~/.bashrc && curl https://raw.githubusercontent.com/rfaile313/dotfiles/master/.vimrc-gnu-linux > ~/.vimrc && echo "Done."
+curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/vimprefs | bash
 ```
