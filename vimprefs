@@ -1,0 +1,27 @@
+#!/bin/bash
+# Setup/update vim prefs on any box
+# Tested on vim 7.4+
+
+VIMRC_URL="https://raw.githubusercontent.com/rfaile313/dotfiles/master/.vimrc-gnu-linux"
+COLORSCHEME_URL="https://raw.githubusercontent.com/rfaile313/dotfiles/master/sonokai.vim"
+VIM_COLORS_DIR="$HOME/.vim/colors"
+
+echo "Adding latest .vimrc from $VIMRC_URL"
+
+curl -s $VIMRC_URL > ~/.vimrc
+
+echo "Done."
+
+if [ -d "$VIM_COLORS_DIR" ]
+then
+    # Doesn't matter if we override.
+    echo "Vim colors already exists. Placing inside."
+	  curl -s $COLORSCHEME_URL > "$VIM_COLORS_DIR/sonokai.vim"
+else
+    echo "Directory $VIM_COLORS_DIR does not exist."
+    echo "Creating and placing inside."
+	  mkdir -pv "$VIM_COLORS_DIR"
+	  curl -s $COLORSCHEME_URL > "$VIM_COLORS_DIR/sonokai.vim"
+fi
+
+echo "Done."
