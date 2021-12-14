@@ -37,9 +37,9 @@ alias ga='git add .'
 alias gc='git commit'
 alias stash='git stash'
 alias gp='git push'
-alias gpr="git push --set-upstream origin $(git branch --show-current)"
+alias gpr="git push --set-upstream origin \$(git branch --show-current)"
 # force local to sync with remote
-alias syncwithmaster="git fetch origin && git reset --hard origin/$(git branch --show-current) && git clean -f -d"
+alias syncwithmaster="git fetch origin && git reset --hard origin/\$(git branch --show-current) && git clean -f -d"
 
 # Tools
 alias loadtime="time zsh -i -c echo"
