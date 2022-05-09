@@ -13,10 +13,18 @@ Other:
 
 ### Howto:
 
-Just vim?
+Bash:
+
+```
+curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/x-bashprefs | bash
+```
+
+Vim:
 
 run `vimprefs` or curl files directly as needed.
 
 ```
-curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/vimprefs | bash
+curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/x-vimprefs | bash
 ```
+
+
