@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Basic .bashrc
+curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/.bashrc > $HOME/.bashrc
+# Basic aliases
+curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/.bash_aliases > $HOME/.bash_aliases
+
+echo "reloading shell..."
+
+exec $SHELL
