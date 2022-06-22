@@ -1,5 +1,7 @@
 " @rfaile313 MacOS vimrc
+" If you paste this into a file
 " Don't autocomment - add this first, then save
+" Otherwise if you curl into stdin or something, no worries
 au BufEnter * set fo-=c fo-=r fo-=o
 " Regular stuff from here
 "------------------------
@@ -12,7 +14,7 @@ set bs=2
 set encoding=utf-8
 set modelines=0
 set wrap
-" Stops text at column 100 
+" Stops text at column 100
 set textwidth=100
 set shiftwidth=4
 set tabstop=4
@@ -26,23 +28,21 @@ set hlsearch
 set showmatch
 set mat=2
 
-" Remap q to Q (macro)
-" Helps hit it less
-nnoremap Q q
-nnoremap q <Nop>
 " color
 colorscheme sonokai
 
 " Lets try no showbreak for a while
 "set showbreak=++
-" Allow for mouse :O 
+" ^^ i like this better AND
+" dont need VV because option+click with mouse works by default
+" Allow for mouse :O
 " set mouse=a
 " set paste messes with autocompletion
 " set paste
-"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent if we're at the beginning of a line. Else, do completion.
-"NOTE(Rudy): DOES NOT WORK WITH :set paste 
+"NOTE(Rudy): DOES NOT WORK WITH :set paste
 function! InsertTabWrapper()
     let col = col('.') - 1
     if !col || getline('.')[col - 1] !~ '\k'
@@ -57,5 +57,22 @@ inoremap <s-tab> <c-n>
 " Move between windows with ctrl <-- -->
 nmap <silent> <C-Right> :wincmd l<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
+
+" Open :Explore iwith ctrl+e in normal mode
+nnoremap <silent> <C-E> :Explore<CR>
+
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
+
+" Remap q to Q (macro)
+" Helps hit it less
+nnoremap Q q
+nnoremap q <Nop>
+
+" Some ghetto thing I was testing for vimDE
+"set splitright
+"new .
+"resize 10
+"wincmd j
+"vnew
+"autocmd VimEnter * wincmd j
