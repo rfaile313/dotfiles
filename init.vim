@@ -54,3 +54,4 @@ nnoremap <silent> ,<space> :nohlsearch<CR>
 " Helps hit it less
 nnoremap Q q
 nnoremap q <Nop>
+
