@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/env bash
 # Setup/update vim prefs on any box
 # Tested on vim 7.4+
 
@@ -8,10 +8,12 @@ VIM_COLORS_DIR="$HOME/.vim/colors"
 
 echo "Adding latest .vimrc from $VIMRC_URL"
 
+# Just blast the current .vimrc away if we're using this
 curl -s $VIMRC_URL > ~/.vimrc
 
 echo "Done."
 
+# Try not to blast existing colors dir
 if [ -d "$VIM_COLORS_DIR" ]
 then
     # Doesn't matter if we override.
