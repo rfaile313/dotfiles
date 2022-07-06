@@ -13,7 +13,8 @@ nmap <silent> <C-Left> :wincmd h<CR>
 " remove highlighting after search with comma-space
 nnoremap <silent> ,<space> :nohlsearch<CR>
 set wrap
-set textwidth=100 " stops at col 100
+" note(rudy): try without this for a while
+" set textwidth=100 " stops at col 100
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
