@@ -8,8 +8,8 @@ Non-private basic dotfile configs:
 
 Other:
 - Useful commands
-- `term_colors.py` - for checking color/schemes
-- `vimprefs` - for setting latest `.vimrc` and including `sonokai.vim` as a color scheme
+- `term_colors.py` - for checking terminal color/schemes
+- `vimprefs` - for setting latest remote `.vimrc` and including `sonokai.vim` as a color scheme
 
 ### Howto:
 
