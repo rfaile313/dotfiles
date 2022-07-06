@@ -14,6 +14,7 @@ set bs=2
 set encoding=utf-8
 set modelines=0
 set wrap
+" note(rudy): try without this for a while
 " Stops text at column 100
 set textwidth=100
 set shiftwidth=4
