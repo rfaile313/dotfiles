@@ -70,10 +70,3 @@ nnoremap <silent> ,<space> :nohlsearch<CR>
 nnoremap Q q
 nnoremap q <Nop>
 
-" Some ghetto thing I was testing for vimDE
-"set splitright
-"new .
-"resize 10
-"wincmd j
-"vnew
-"autocmd VimEnter * wincmd j
