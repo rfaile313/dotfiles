@@ -9,6 +9,8 @@ set bs=2
 set encoding=utf-8
 set modelines=0
 set wrap
+" flash instead of beep
+set visualbell
 " note(rudy) turn paste and line wrap off for a bit
 "set paste " uncomment or set manually for no line wrap
 "set textwidth=100 " stops at col 100
