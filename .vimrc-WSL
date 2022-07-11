@@ -8,7 +8,7 @@ set wildmenu
 set bs=2
 set encoding=utf-8
 set modelines=0
-set wrap
+set nowrap
 " flash instead of beep
 set visualbell
 " note(rudy) turn paste and line wrap off for a bit
@@ -48,29 +48,21 @@ nnoremap <silent> ,<space> :nohlsearch<CR>
 " Open :Explore iwith ctrl+e in normal mode
 nnoremap <silent> <C-E> :Explore<CR>
 
-" color
 " all that is needed for any color scheme in vim is to place in
 " ~/.vim/colors   --- e.g. ~/.vim/colors/sonokai.vim
 colorscheme sonokai
-" C code completion citing clang
-let g:completor_clang_binary= '/usr/bin/clang'
 
-" tab autocomplete -> pretty leet
-function! Tab_Or_Complete() abort
-  " If completor is already open the `tab` cycles through suggested completions.
-  if pumvisible()
-    return "\<C-N>"
-  " If completor is not open and we are in the middle of typing a word then
-  " `tab` opens completor menu.
-  elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^[[:keyword:][:ident:]]'
-    return "\<C-R>=completor#do('complete')\<CR>"
-  else
-    " If we aren't typing a word and we press `tab` simply do the normal `tab`
-    " action.
-    return "\<Tab>"
-  endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Indent if we're at the beginning of a line. Else, do completion.
+"NOTE(Rudy): DOES NOT WORK WITH :set paste
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
 endfunction
-
-" Use tab to trigger auto completion.  Default suggests completions as you type.
-"let g:completor_auto_trigger = 0
-inoremap <expr> <Tab> Tab_Or_Complete()
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
