@@ -20,6 +20,10 @@ set softtabstop=4
 set scrolloff=3
 " smarter backspace
 set backspace=indent,eol,start
+" auto indentation
+set autoindent
+" mouse scrolling :>
+set mouse=a
 set history=500
 set ignorecase
 set smartcase
