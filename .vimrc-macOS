@@ -14,9 +14,9 @@ set bs=2
 set encoding=utf-8
 set modelines=0
 set wrap
-" note(rudy): try without this for a while
 " Stops text at column 100
-set textwidth=100
+" Note(rudy): lets try this off for a while
+" set textwidth=100
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
@@ -32,12 +32,6 @@ set mat=2
 " color
 colorscheme sonokai
 
-" Lets try no showbreak for a while
-"set showbreak=++
-" ^^ i like this better AND
-" dont need VV because option+click with mouse works by default
-" Allow for mouse :O
-" set mouse=a
 " set paste messes with autocompletion
 " set paste
 
@@ -70,3 +64,9 @@ nnoremap <silent> ,<space> :nohlsearch<CR>
 nnoremap Q q
 nnoremap q <Nop>
 
+" Notes -- 
+
+" option+click with mouse works by default
+
+" Vertical split
+" :Vex
