@@ -9,7 +9,7 @@ Non-private basic dotfile configs:
 Other:
 - Useful commands
 - `term_colors.py` - for checking terminal color/schemes
-- `vimprefs` - for setting latest remote `.vimrc` and including `sonokai.vim` as a color scheme
+- `x-vimprefs` - for setting latest remote `.vimrc` and including `sonokai.vim` as a color scheme
 
 ### Howto:
 
@@ -20,8 +20,6 @@ curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/x-bashprefs 
 ```
 
 Vim:
-
-run `vimprefs` or curl files directly as needed.
 
 ```
 curl -s https://raw.githubusercontent.com/rfaile313/dotfiles/master/x-vimprefs | bash
