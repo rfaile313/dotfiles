@@ -11,7 +11,6 @@ alias hosts='sudo vim /etc/hosts'
 # Show ports / connections / ip
 alias openports='sudo lsof -i -P -n | grep LISTEN'
 alias activesshsessions="ss -n -o state established '( dport = :22 or sport = :22 )'"
-alias whatismyip='curl ifconfig.me'
 
 # Colorful greps n' stuff
 alias egrep='egrep --color=auto'
