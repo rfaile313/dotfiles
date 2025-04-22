@@ -13,7 +13,7 @@ curl -s $VIMRC_URL > ~/.vimrc
 
 echo "Done."
 
-# Try not to blast existing colors dir
+# Try not to blast away existing colors dir
 if [ -d "$VIM_COLORS_DIR" ]
 then
     # Doesn't matter if we override.
